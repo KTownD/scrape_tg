@@ -17,3 +17,4 @@ I had installed `serve` (`npm install -g serve`) and then run `serve -s build` t
 remotely from my mac-mini or my cellphone. However, I started having some problems with it, and now when
 I just do a regular `npm start`, I can still access it remotely.
 
+![image](https://github.com/KTownD/scrape_tg/assets/6497877/1e9f0afb-5211-4e8b-9643-cfb51e4e9200)
