@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/KTownD/scrape_tg/static/css/main.d3aea9f3.css",
-    "main.js": "/KTownD/scrape_tg/static/js/main.4c209f3b.js",
-    "static/js/787.479c5a61.chunk.js": "/KTownD/scrape_tg/static/js/787.479c5a61.chunk.js",
-    "index.html": "/KTownD/scrape_tg/index.html",
-    "main.d3aea9f3.css.map": "/KTownD/scrape_tg/static/css/main.d3aea9f3.css.map",
-    "main.4c209f3b.js.map": "/KTownD/scrape_tg/static/js/main.4c209f3b.js.map",
-    "787.479c5a61.chunk.js.map": "/KTownD/scrape_tg/static/js/787.479c5a61.chunk.js.map"
+    "main.css": "/scrape_tg/static/css/main.d3aea9f3.css",
+    "main.js": "/scrape_tg/static/js/main.4861d8c5.js",
+    "static/js/787.479c5a61.chunk.js": "/scrape_tg/static/js/787.479c5a61.chunk.js",
+    "index.html": "/scrape_tg/index.html",
+    "main.d3aea9f3.css.map": "/scrape_tg/static/css/main.d3aea9f3.css.map",
+    "main.4861d8c5.js.map": "/scrape_tg/static/js/main.4861d8c5.js.map",
+    "787.479c5a61.chunk.js.map": "/scrape_tg/static/js/787.479c5a61.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d3aea9f3.css",
-    "static/js/main.4c209f3b.js"
+    "static/js/main.4861d8c5.js"
   ]
 }
