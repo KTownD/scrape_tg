@@ -1,0 +1,105 @@
+.tooltip{
+    opacity: 0;
+}
+
+/*
+.details-link-a svg:hover .tooltip {
+  opacity:1;
+}
+*/
+
+.tooltip-trigger:hover + .tooltip {
+  opacity:1;
+}
+
+.tooltip-trigger {
+  position: relative;
+  display: inline;
+}
+
+.tooltip {
+/*  width: 150%;
+  min-width: 40px;*/
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 3px;
+  opacity: 0;
+  transition: opacity 1s;
+  position: absolute;
+  z-index: 100;
+  font-size: x-small;
+}
+
+.tooltip-right{
+  bottom: 40%;
+  right: 0%;
+
+}
+
+
+.tooltip-left{
+  bottom: 40%;
+  left: 0%;
+}
+
+.tooltip-top{
+  bottom: 50%;
+  left: 20%;
+  
+}
+
+
+.tooltip-bottom{
+  top:25px;
+  left:-15px;
+}
+
+/* ::after emelments are the little arrows for the popup balloon */
+.tooltip-trigger .tooltip-top::after {
+  content: " ";
+  position: absolute;
+  top: 100%; 
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+
+.tooltip-trigger .tooltip-bottom::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%; 
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+
+.tooltip-trigger .tooltip-right::after{
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+
+.tooltip-trigger .tooltip-left::after{
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent  transparent transparent black;
+}

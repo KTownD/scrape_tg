@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/App.css';
 import axios from "axios"
 import { useState, useEffect } from 'react';
 import { Episode } from './components/Episode';
@@ -25,8 +25,17 @@ function App() {
   useEffect(() => {
     async function getData() {
       try {
+        let res = '';
+
         setLoadingState( LOADINGSTATE.LOADING);
-        const res = await axios.get('/api/torrents-hotpicks.php?cat=3');
+        if(process.env.NODE_ENV === 'development') {
+          console.log('dev mode');
+          res = await axios.get('/api/torrents-hotpicks.php?cat=3');
+        } else {
+          console.log('deploy mode');
+          res = await axios.get('https://torrentgalaxy.to/torrents-hotpicks.php?cat=3&not-from-cache-please');
+        }
+
         //setHtmlData(res.data);
         setChoppedData(ChopData(res.data));
         setLoadingState(  LOADINGSTATE.LOADED);
@@ -166,6 +175,7 @@ function App() {
           </div>
         </aside>
 
+{ true && 
         <div className='episode-area'>
           <div className='fav-episode-area'>
             {loadingState===LOADINGSTATE.LOADING &&  
@@ -206,7 +216,8 @@ function App() {
               ))
             }
           </div>
-        </div>
+
+        </div> }
       </div>
     </div>
   );
