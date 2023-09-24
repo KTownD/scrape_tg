@@ -6,7 +6,6 @@ import { Episode } from "./components/Episode";
 import { ChopData } from "./dataUtils.js";
 import { VscSettings } from "react-icons/vsc";
 import Checkbox from "./components/Checkbox";
-//import { Placeholder } from "semantic-ui-react";
 import ReactPlaceholder from "react-placeholder";
 import {  RectShape } from "react-placeholder/lib/placeholders";
 import Slider from "./components/Slider";
