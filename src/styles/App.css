@@ -1,33 +1,30 @@
-
-
 .App {
-  --dark-color:#282b2d;
-  --light-color: coral ;
-  
+  --dark-color: #282b2d;
+  --light-color: coral;
+
   --primary-rgb: 158, 15, 184; /* #9e0fb8 */
   --secondary-rgb: 5, 232, 255; /* #05e8ff */
 
   display: flex;
   flex-direction: column;
 
-  height : 100vh;
+  height: 100vh;
 
   min-width: 400px;
   min-height: 600px;
-  font-family: "Roboto Condensed",sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 16px;
-  color: var(light-color) ;
+  color: var(light-color);
+  background: linear-gradient(45deg, rgb(238, 238, 255), rgb(0, 17, 255));
 
-/*  background: #282b2d;*/
-/*  background: url(./header-bg.jpeg);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: repeat-x;
-*/
-    background: linear-gradient(45deg, rgb(238, 238, 255), rgb(0, 17, 255));
+    --main-color: rgb(104, 117, 217);
+    --main-color-hover: rgb(104, 117, 217, 0.2);
+    --track-color: #ddd;
+    --mark-color: #aaaaaa;
+  
   }
 
-.app-body{
+.app-body {
   display: flex;
 }
 
@@ -35,6 +32,26 @@
   color: var(--light-color);
   background: var(--dark-color);
   padding: 5px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.settings {
+  color: var(--light-color);
+  background: var(--dark-color);
+  padding-left: 10px;
+  min-width: 250px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-btn {
+  color: var(--light-color);
+  background: var(--dark-color);
+  cursor: pointer;
 }
 
 .sidebar {
@@ -68,7 +85,7 @@
 
 .favs-filters-list {
   list-style: none;
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: left;
   margin: 0px;
@@ -84,7 +101,7 @@
 
 .hide-filters-list {
   list-style: none;
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: left;
   margin: 0px;
@@ -101,12 +118,15 @@
   flex-direction: column; /* Set to column for vertical alignment */
 }
 
+.loading-area {
+  flex-flow: row nowrap;
+  min-width: 800px;
+}
+
 .fav-episode-area {
   display: flex;
   flex-direction: row;
   flex-flow: row wrap;
-
-  /*background-color: rgb(82, 142, 50);*/
 }
 
 .fav-episode-area .episode-container {
@@ -122,13 +142,13 @@
 }
 
 .episode-container {
-  max-width: 125px;
-  position:relative;
+  /*max-width: 125px;*/
+  position: relative;
   z-index: 5;
 
-  display:flex;
+  display: flex;
   flex-flow: row nowrap;
-  align-content:flex-start;
+  align-content: flex-start;
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -149,32 +169,31 @@
 .episode-details {
   display: flex;
   flex-flow: column nowrap;
-  
+
   width: calc(100% - 10px);
   font-size: small;
-  
-  background-color:burlywood;
+
+  background-color: burlywood;
   border-radius: 5px;
-  
+
   /* need absolute positioning to display on top of the image */
-  position:absolute;
-  bottom:10%;
+  position: absolute;
+  bottom: 10%;
 
   /* this is to get it centered in parent even though position is absolute */
-  left:50%;
+  left: 50%;
   transform: translateX(-50%);
 
   /* initially hide. see :hover above where this is changed */
   opacity: 0;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
 }
 
 .episode-title {
-    /* handle text too wide */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  
+  /* handle text too wide */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .season-episode {
@@ -183,7 +202,7 @@
   font-size: small;
   justify-content: space-around;
 
-  color:var(--dark-color);
+  color: var(--dark-color);
 }
 
 .season-num {
@@ -194,7 +213,7 @@
   font-weight: bold;
 }
 
-.grayed-episode{
+.grayed-episode {
   /*background-color: burlywood;*/
   rotate: -5deg;
 }
@@ -215,4 +234,56 @@
 .episode-details-links a {
   text-decoration: none;
   margin-right: 10px;
+}
+
+
+/**********************************************************/
+/*        SETTINGS PAGE                                   */
+/**********************************************************/
+.customSlider {
+  max-width: 80%;
+  max-height: 60px;
+  margin-left: 10px;
+}
+
+.customSlider-track {
+  top: 8px;
+  height: 4px;
+  background: var(--track-color);
+}
+
+.customSlider-track.customSlider-track-0 {
+  background: var(--main-color);
+}
+
+.customSlider-thumb {
+  cursor: pointer;
+  /*color for the thumb */
+  background: var(--main-color);
+  /* shape of the thumb: circle */
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  /* remove default outline when selected */
+  outline: none;
+}
+
+.customSlider-thumb:hover {
+  box-shadow: 0 0 0 8px var(--main-color-hover);
+}
+
+.customSlider-mark {
+  cursor: pointer;
+  top: 6px;
+  width: 1.5px;
+  height: 8px;
+  background-color: var(--mark-color);
+}
+
+.customSlider-mark.customSlider-mark-before {
+  background-color: var(--main-color);
+}
+
+.customSlider-mark.customSlider-mark-active {
+  display: none;
 }
